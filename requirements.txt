@@ -1,5 +1,4 @@
 click==8.5.0
-deepeval==4.3.0
 fastapi==0.143.2
 fastmcp==4.1.0
 langchain-community==0.4.2
