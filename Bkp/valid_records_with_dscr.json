@@ -1,0 +1,253 @@
+[
+  {
+    "application_id": "ASH-L-00076",
+    "applicant_id": "ASH-A-00076",
+    "channel": "web_form",
+    "received_at": "2026-07-24T11:56:00",
+    "business_name": "Douglas Industries",
+    "sector": "Auto Components",
+    "requested_amount_inr": 1700000,
+    "requested_tenor_months": 48,
+    "declared_financials": {
+      "annual_revenue_inr": 85000000,
+      "ebitda_inr": 10884453,
+      "existing_debt_inr": 17983173,
+      "existing_annual_debt_service_inr": 2423000,
+      "current_assets_inr": 16358000,
+      "current_liabilities_inr": 9068000,
+      "months_operating": 220,
+      "collateral_value_inr": 2316000
+    },
+    "bureau_score": 594,
+    "ground_truth": {
+      "dscr": 3.65,
+      "meets_dscr_floor": true,
+      "risk_band": "approve",
+      "requires_human_signoff": true,
+      "missing_fields": []
+    },
+    "record_id": "WEALTHPILOT-00000",
+    "calculated_dscr": 3.652,
+    "routing": "manual_review",
+    "routing_reasons": [
+      "Requested amount exceeds the INR 1,000,000 auto-approval limit (4.5.1)."
+    ],
+    "assessment": {
+      "application_id": "ASH-L-00076",
+      "dscr": 3.652,
+      "risk_grade": "C1",
+      "indicative_rate_pct": 14.0,
+      "max_tenor_months": 48,
+      "collateral_required_pct": 100.0,
+      "collateral_required_inr": 1700000.0,
+      "reason_codes": [],
+      "routing": "manual_review",
+      "routing_reasons": [
+        "Requested amount exceeds the INR 1,000,000 auto-approval limit (4.5.1)."
+      ],
+      "key_risks": [
+        "Moderate bureau score of 594 indicating historical credit management concerns",
+        "Loan amount exceeds the automated approval limit, requiring manual underwriting oversight"
+      ],
+      "data_gaps": [
+        "Bank statement retrieval failed due to an invalid or missing mock statement ID (WEALTHPILOT-00000)"
+      ],
+      "rationale": "Douglas Industries presents a strong DSCR of 3.65 based on its declared EBITDA and debt service structure, and the requested tenor of 48 months complies with the policy maximum. However, the application features a moderate bureau score of 594 and a loan amount of INR 1,700,000, which exceeds the automatic approval threshold and mandates a manual review. Additionally, bank statement verification could not be completed because the statement identifier did not return a valid mock record.",
+      "tools_used": [
+        "get_bank_statement",
+        "get_credit_bureau",
+        "calculate_dscr",
+        "assign_risk_grade"
+      ]
+    }
+  },
+  {
+    "application_id": "ASH-L-00032",
+    "applicant_id": "ASH-A-00032",
+    "channel": "relationship_manager_email",
+    "received_at": "2026-06-29T15:13:00",
+    "business_name": "Parker Enterprises",
+    "sector": "Logistics",
+    "requested_amount_inr": 12750000,
+    "requested_tenor_months": 36,
+    "declared_financials": {
+      "annual_revenue_inr": 85000000,
+      "ebitda_inr": 11409583,
+      "existing_debt_inr": 27853140,
+      "existing_annual_debt_service_inr": 5227000,
+      "current_assets_inr": 9557000,
+      "current_liabilities_inr": 9365000,
+      "months_operating": 69,
+      "collateral_value_inr": 13562000
+    },
+    "bureau_score": 340,
+    "ground_truth": {
+      "dscr": 1.09,
+      "meets_dscr_floor": false,
+      "risk_band": "decline",
+      "requires_human_signoff": true,
+      "missing_fields": []
+    },
+    "record_id": "WEALTHPILOT-00001",
+    "calculated_dscr": 1.091,
+    "routing": "manual_review",
+    "routing_reasons": [
+      "Requested tenor of 36 months exceeds the permitted maximum of 12 (4.3.2).",
+      "Appraised collateral is below the required coverage for this grade (4.4.3).",
+      "Grade D2 is never eligible for auto-approval (4.5.2)."
+    ],
+    "assessment": {
+      "application_id": "ASH-L-00032",
+      "dscr": 1.091,
+      "risk_grade": "D2",
+      "indicative_rate_pct": 18.5,
+      "max_tenor_months": 12,
+      "collateral_required_pct": 150.0,
+      "collateral_required_inr": 19125000.0,
+      "reason_codes": [
+        "TENOR_ABOVE_LIMIT",
+        "COLLATERAL_SHORTFALL"
+      ],
+      "routing": "manual_review",
+      "routing_reasons": [
+        "Requested tenor of 36 months exceeds the permitted maximum of 12 (4.3.2).",
+        "Appraised collateral is below the required coverage for this grade (4.4.3).",
+        "Grade D2 is never eligible for auto-approval (4.5.2)."
+      ],
+      "key_risks": [
+        "Weak DSCR of 1.09 leaving very thin cash flow buffer for debt service",
+        "Very low bureau score of 340 indicating severe past credit defaults",
+        "Requested tenor of 36 months significantly exceeds the maximum permitted 12 months for risk grade D2",
+        "Collateral value of INR 13,562,000 falls well short of the required INR 19,125,000 (150%) coverage"
+      ],
+      "data_gaps": [
+        "Bank statement retrieval failed due to invalid statement ID / mock record mismatch",
+        "Credit bureau lookup failed for the provided statement ID"
+      ],
+      "rationale": "Parker Enterprises presents high credit risk with a thin DSCR of 1.09 and a depressed bureau score of 340. Under credit policy CP-M-882 section 4, the application is graded D2, which triggers mandatory manual review, a capped tenor of 12 months (versus 36 requested), and a collateral shortfall against the 150% requirement.",
+      "tools_used": [
+        "get_bank_statement",
+        "get_credit_bureau",
+        "calculate_dscr",
+        "assign_risk_grade"
+      ]
+    }
+  },
+  {
+    "application_id": "ASH-L-00069",
+    "applicant_id": "ASH-A-00069",
+    "channel": "partner_api",
+    "received_at": "2026-07-02T18:28:00",
+    "business_name": "Jones Industries",
+    "sector": "Auto Components",
+    "requested_amount_inr": 850000,
+    "requested_tenor_months": 24,
+    "declared_financials": {
+      "annual_revenue_inr": 49935000,
+      "ebitda_inr": 7238073,
+      "existing_debt_inr": 9467305,
+      "existing_annual_debt_service_inr": 1684000,
+      "current_assets_inr": 13264000,
+      "current_liabilities_inr": 6441000,
+      "months_operating": 50,
+      "collateral_value_inr": 850000
+    },
+    "bureau_score": 836,
+    "ground_truth": {
+      "dscr": 3.33,
+      "meets_dscr_floor": true,
+      "risk_band": "borderline",
+      "requires_human_signoff": true,
+      "missing_fields": []
+    },
+    "record_id": "WEALTHPILOT-00002",
+    "calculated_dscr": 3.33,
+    "routing": "auto_approve_eligible",
+    "routing_reasons": [],
+    "assessment": {
+      "application_id": "ASH-L-00069",
+      "dscr": 3.33,
+      "risk_grade": "A1",
+      "indicative_rate_pct": 11.0,
+      "max_tenor_months": 84,
+      "collateral_required_pct": 0.0,
+      "collateral_required_inr": 0.0,
+      "reason_codes": [],
+      "routing": "auto_approve_eligible",
+      "routing_reasons": [],
+      "key_risks": [
+        "Existing debt load of INR 9.47M requires close monitoring relative to annual turnover."
+      ],
+      "data_gaps": [
+        "Bank statement retrieval failed due to missing or invalid statement ID mapping in the mock environment."
+      ],
+      "rationale": "Jones Industries demonstrates robust debt service coverage with a calculated DSCR of 3.33 and an excellent bureau score of 836. Under Ashva Capital credit policy CP-M-882 section 4, these strong financials qualify the application for an A1 risk grade and auto-approval eligibility. Although the bank statement lookup failed, the verified bureau record and healthy EBITDA comfortably support the requested facility of INR 850,000 over 24 months.",
+      "tools_used": [
+        "get_bank_statement",
+        "get_credit_bureau",
+        "calculate_dscr",
+        "assign_risk_grade"
+      ]
+    }
+  },
+  {
+    "application_id": "ASH-L-00149",
+    "applicant_id": "ASH-A-00149",
+    "channel": "web_form",
+    "received_at": "2026-07-09T19:36:00",
+    "business_name": "Anderson Exports",
+    "sector": "Textiles",
+    "requested_amount_inr": 12750000,
+    "requested_tenor_months": 48,
+    "declared_financials": {
+      "annual_revenue_inr": 85000000,
+      "ebitda_inr": 4426232,
+      "existing_debt_inr": 20852736,
+      "existing_annual_debt_service_inr": 4514000,
+      "current_assets_inr": 50783000,
+      "current_liabilities_inr": 20735000,
+      "months_operating": 6,
+      "collateral_value_inr": 11630000
+    },
+    "bureau_score": 735,
+    "ground_truth": {
+      "dscr": 0.51,
+      "meets_dscr_floor": false,
+      "risk_band": "decline",
+      "requires_human_signoff": true,
+      "missing_fields": []
+    },
+    "record_id": "WEALTHPILOT-00003",
+    "calculated_dscr": 0.509,
+    "routing": "manual_review",
+    "routing_reasons": [],
+    "assessment": {
+      "application_id": "ASH-L-00149",
+      "dscr": 0.509,
+      "risk_grade": null,
+      "indicative_rate_pct": null,
+      "max_tenor_months": null,
+      "collateral_required_pct": null,
+      "collateral_required_inr": null,
+      "reason_codes": [],
+      "routing": "manual_review",
+      "routing_reasons": [],
+      "key_risks": [
+        "Extremely low DSCR (0.51) indicating severe debt-servicing vulnerability",
+        "Short operating history (only 6 months)",
+        "High leverage relative to EBITDA"
+      ],
+      "data_gaps": [
+        "Bank statement lookup failed for statement_id WEALTHPILOT-00003",
+        "Credit bureau lookup failed for statement_id WEALTHPILOT-00003",
+        "No risk grade assigned (a required input was missing or a tool failed); routed to manual review."
+      ],
+      "rationale": "The application shows a very low DSCR of 0.51, reflecting insufficient earnings to cover both existing and proposed debt service obligations. Furthermore, bank statements and credit bureau records could not be retrieved due to a lookup failure on the provided statement ID. Combined with an operating history of only 6 months, the proposal presents high credit risk and insufficient verification data.",
+      "tools_used": [
+        "get_bank_statement",
+        "get_credit_bureau",
+        "calculate_dscr"
+      ]
+    }
+  }
+]

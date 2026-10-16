@@ -1,0 +1,386 @@
+[
+  {
+    "application_id": "ASH-L-00076",
+    "applicant_id": "ASH-A-00076",
+    "sector": "Auto Components",
+    "sector_source": "sector_policies.json",
+    "sector_dscr_floor": 1.35,
+    "policy_min_dscr": 1.25,
+    "dscr_floor_applied": 1.35,
+    "ebitda_inr": 10884453.0,
+    "dscr": 3.652,
+    "bureau_score": 594,
+    "risk_grade": "C1",
+    "base_rate_pct": 9.5,
+    "indicative_rate_pct": 14.0,
+    "max_tenor_months": 48,
+    "collateral_required_pct": 100.0,
+    "collateral_required_inr": 1700000.0,
+    "leverage_x": 1.81,
+    "current_ratio": 1.8,
+    "revenue_variance_pct": 0.0,
+    "export_receivables_usd": 29017.96,
+    "usd_inr_rate": 83.5,
+    "bank_statement_summary": {
+      "applicant_id": "ASH-A-00076",
+      "months_covered": 3,
+      "period": "2025-06 to 2025-10",
+      "statement_ids": [
+        "ASH-S-001161",
+        "ASH-S-000015",
+        "ASH-S-000118"
+      ],
+      "total_inflow_inr": 7901565,
+      "total_outflow_inr": 12537468,
+      "net_cash_flow_inr": -4635903,
+      "avg_monthly_inflow_inr": 2633855,
+      "avg_monthly_outflow_inr": 4179156,
+      "avg_closing_balance_inr": 2602436,
+      "min_closing_balance_inr": 1135720,
+      "avg_daily_balance_inr": 1003436,
+      "bounced_instruments_total": 1,
+      "months_with_bounces": 1,
+      "months_negative_closing": 0,
+      "red_flags": [
+        "1 bounced instrument(s) across 1 month(s).",
+        "Outflows exceeded inflows by INR 4,635,903 over the period."
+      ],
+      "source": "bank_statements.json"
+    },
+    "decision": "approve",
+    "risk_band": "approve",
+    "requires_human_signoff": true,
+    "decision_reasons": [
+      {
+        "code": "APPROVED_STANDARD",
+        "meaning": "Meets every underwriting standard",
+        "is_decline_reason": false,
+        "route": "approve",
+        "detail": "Meets every underwriting standard."
+      }
+    ],
+    "routing_reasons": [
+      "Amount INR 1,700,000 is above the INR 1,000,000 limit for system approval.",
+      "Human sign-off required: Credit Committee."
+    ],
+    "requires_named_signatory": false,
+    "approval_authority": "Credit Committee",
+    "key_risks": [
+      "Credit bureau score of 594 indicates sub-prime credit history",
+      "Negative net cash flow observed across bank statements with outflows exceeding inflows",
+      "Single bounced instrument noted in recent statement history"
+    ],
+    "data_gaps": [],
+    "rationale": "The application achieves a DSCR of 3.652, which comfortably exceeds the auto components sector floor of 1.35. Although the applicant shows a weak bureau score of 594 and negative net cash flow with a bounced instrument in their bank statement analysis, the robust EBITDA and sufficient collateral support a decision to approve. The application meets all underwriting standards under risk grade C1 and requires Credit Committee sign-off due to the loan amount.",
+    "tools_used": [
+      "get_applicant_profile",
+      "get_credit_bureau",
+      "get_bank_statement",
+      "assign_risk_grade"
+    ]
+  },
+  {
+    "application_id": "ASH-L-00032",
+    "applicant_id": "ASH-A-00032",
+    "sector": "Logistics",
+    "sector_source": "sector_policies.json",
+    "sector_dscr_floor": 1.4,
+    "policy_min_dscr": 1.25,
+    "dscr_floor_applied": 1.4,
+    "ebitda_inr": 11409583.0,
+    "dscr": 1.091,
+    "bureau_score": 340,
+    "risk_grade": "D2",
+    "base_rate_pct": 9.5,
+    "indicative_rate_pct": 18.5,
+    "max_tenor_months": 12,
+    "collateral_required_pct": 150.0,
+    "collateral_required_inr": 19125000.0,
+    "leverage_x": 3.56,
+    "current_ratio": 1.02,
+    "revenue_variance_pct": 0.0,
+    "export_receivables_usd": 62598.8,
+    "usd_inr_rate": 83.5,
+    "bank_statement_summary": {
+      "applicant_id": "ASH-A-00032",
+      "months_covered": 2,
+      "period": "2025-05 to 2026-01",
+      "statement_ids": [
+        "ASH-S-001047",
+        "ASH-S-000876"
+      ],
+      "total_inflow_inr": 13445830,
+      "total_outflow_inr": 9826148,
+      "net_cash_flow_inr": 3619682,
+      "avg_monthly_inflow_inr": 6722915,
+      "avg_monthly_outflow_inr": 4913074,
+      "avg_closing_balance_inr": 2234968,
+      "min_closing_balance_inr": 1895873,
+      "avg_daily_balance_inr": 1378592,
+      "bounced_instruments_total": 0,
+      "months_with_bounces": 0,
+      "months_negative_closing": 0,
+      "red_flags": [
+        "Only 2 month(s) of statements (fewer than 3)."
+      ],
+      "source": "bank_statements.json"
+    },
+    "decision": "decline",
+    "risk_band": "decline",
+    "requires_human_signoff": true,
+    "decision_reasons": [
+      {
+        "code": "ADVERSE_BUREAU",
+        "meaning": "Bureau score below 450",
+        "is_decline_reason": true,
+        "route": "decline",
+        "detail": "Bureau score 340 is below 450."
+      },
+      {
+        "code": "DSCR_BELOW_FLOOR",
+        "meaning": "Debt-service coverage ratio is below the sector floor",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "DSCR 1.09 is below the Logistics floor of 1.40."
+      },
+      {
+        "code": "LIQUIDITY_BELOW_FLOOR",
+        "meaning": "Current ratio is below 1.10",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Current ratio 1.02 is below 1.10."
+      },
+      {
+        "code": "SECTOR_CAP",
+        "meaning": "The sector has reached its maximum share of the loan book",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Logistics is at its maximum share of the loan book (10.0%); route to a Senior Credit Reviewer."
+      },
+      {
+        "code": "TENOR_ABOVE_LIMIT",
+        "meaning": "Requested tenor is longer than the grade or the sector allows",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Requested tenor 36 months exceeds the permitted 12 (grade/sector, 4.3.2)."
+      },
+      {
+        "code": "COLLATERAL_SHORTFALL",
+        "meaning": "Collateral is worth less than the cover the grade requires",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Collateral INR 13,562,000 is below the required INR 19,125,000 (150% for grade D2)."
+      }
+    ],
+    "routing_reasons": [
+      "Human sign-off required: Board Credit Committee."
+    ],
+    "requires_named_signatory": true,
+    "approval_authority": "Board Credit Committee",
+    "key_risks": [
+      "Adverse bureau score of 340, falling significantly below the 450 minimum threshold",
+      "Weak DSCR of 1.09, which fails to meet the Logistics sector floor of 1.40",
+      "Current ratio of 1.02, falling below the required 1.10 liquidity floor",
+      "Collateral shortfall with provided collateral of INR 13,562,000 against a required INR 19,125,000 (150%)",
+      "Logistics sector concentration cap reached and requested tenor exceeding the permitted 12 months"
+    ],
+    "data_gaps": [],
+    "rationale": "The application is declined due to multiple severe policy breaches. The applicant's DSCR of 1.09 falls below the Logistics sector floor of 1.40, and the credit bureau score of 340 fails the minimum cutoff of 450. Additionally, the current ratio and collateral coverage are inadequate, while the Logistics sector has reached its exposure cap and the requested tenor exceeds the 12-month limit.",
+    "tools_used": [
+      "get_applicant_profile",
+      "get_credit_bureau",
+      "get_bank_statement",
+      "assign_risk_grade"
+    ]
+  },
+  {
+    "application_id": "ASH-L-00069",
+    "applicant_id": "ASH-A-00069",
+    "sector": "Auto Components",
+    "sector_source": "sector_policies.json",
+    "sector_dscr_floor": 1.35,
+    "policy_min_dscr": 1.25,
+    "dscr_floor_applied": 1.35,
+    "ebitda_inr": 7238073.0,
+    "dscr": 3.33,
+    "bureau_score": 836,
+    "risk_grade": "A1",
+    "base_rate_pct": 9.5,
+    "indicative_rate_pct": 11.0,
+    "max_tenor_months": 60,
+    "collateral_required_pct": 0.0,
+    "collateral_required_inr": 0.0,
+    "leverage_x": 1.43,
+    "current_ratio": 2.06,
+    "revenue_variance_pct": 18.9,
+    "export_receivables_usd": 20167.66,
+    "usd_inr_rate": 83.5,
+    "bank_statement_summary": {
+      "applicant_id": "ASH-A-00069",
+      "months_covered": 3,
+      "period": "2025-08 to 2026-02",
+      "statement_ids": [
+        "ASH-S-000072",
+        "ASH-S-000341",
+        "ASH-S-001194"
+      ],
+      "total_inflow_inr": 11610011,
+      "total_outflow_inr": 11585649,
+      "net_cash_flow_inr": 24362,
+      "avg_monthly_inflow_inr": 3870004,
+      "avg_monthly_outflow_inr": 3861883,
+      "avg_closing_balance_inr": 2198871,
+      "min_closing_balance_inr": 1778811,
+      "avg_daily_balance_inr": 557026,
+      "bounced_instruments_total": 1,
+      "months_with_bounces": 1,
+      "months_negative_closing": 0,
+      "red_flags": [
+        "1 bounced instrument(s) across 1 month(s)."
+      ],
+      "source": "bank_statements.json"
+    },
+    "decision": "borderline",
+    "risk_band": "borderline",
+    "requires_human_signoff": true,
+    "decision_reasons": [
+      {
+        "code": "DOC_MISMATCH",
+        "meaning": "Declared revenue differs from verified revenue by more than 10 percent",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Declared revenue INR 49,935,000 vs verified INR 42,000,000 (18.9% apart, over 10%)."
+      }
+    ],
+    "routing_reasons": [
+      "Human sign-off required: Credit Officer."
+    ],
+    "requires_named_signatory": false,
+    "approval_authority": "Credit Officer",
+    "key_risks": [
+      "Declared annual revenue of INR 49,935,000 exceeds verified revenue of INR 42,000,000 by 18.9% (exceeding the 10% variance threshold).",
+      "Recent bank statement shows 1 bounced instrument across 1 month.",
+      "Higher number of recent credit enquiries (7 in the last 6 months)."
+    ],
+    "data_gaps": [],
+    "rationale": "The application is classified as borderline due to a revenue discrepancy of 18.9% between declared and verified figures (DOC_MISMATCH), triggering a mandatory human sign-off by a Credit Officer. On the positive side, the calculated DSCR of 3.33 comfortably exceeds the sector DSCR floor of 1.35 for Auto Components, and the applicant maintains an excellent bureau score of 836 with no past write-offs or 90+ DPD delinquencies. Despite minor bank statement red flags (1 bounced instrument), the strong cash flow coverage and robust credit profile support a borderline approval decision under risk grade A1.",
+    "tools_used": [
+      "get_applicant_profile",
+      "get_credit_bureau",
+      "get_bank_statement",
+      "assign_risk_grade"
+    ]
+  },
+  {
+    "application_id": "ASH-L-00149",
+    "applicant_id": "ASH-A-00149",
+    "sector": "Textiles",
+    "sector_source": "sector_policies.json",
+    "sector_dscr_floor": 1.3,
+    "policy_min_dscr": 1.25,
+    "dscr_floor_applied": 1.3,
+    "ebitda_inr": 4426232.0,
+    "dscr": 0.509,
+    "bureau_score": 735,
+    "risk_grade": "D2",
+    "base_rate_pct": 9.5,
+    "indicative_rate_pct": 18.5,
+    "max_tenor_months": 12,
+    "collateral_required_pct": 150.0,
+    "collateral_required_inr": 19125000.0,
+    "leverage_x": 7.59,
+    "current_ratio": 2.45,
+    "revenue_variance_pct": 0.0,
+    "export_receivables_usd": 54059.88,
+    "usd_inr_rate": 83.5,
+    "bank_statement_summary": {
+      "applicant_id": "ASH-A-00149",
+      "months_covered": 7,
+      "period": "2025-03 to 2026-07",
+      "statement_ids": [
+        "ASH-S-000175",
+        "ASH-S-001046",
+        "ASH-S-000140",
+        "ASH-S-001073",
+        "ASH-S-001061",
+        "ASH-S-000938",
+        "ASH-S-000186"
+      ],
+      "total_inflow_inr": 31794726,
+      "total_outflow_inr": 30504556,
+      "net_cash_flow_inr": 1290170,
+      "avg_monthly_inflow_inr": 4542104,
+      "avg_monthly_outflow_inr": 4357794,
+      "avg_closing_balance_inr": 2533233,
+      "min_closing_balance_inr": 162317,
+      "avg_daily_balance_inr": 1150575,
+      "bounced_instruments_total": 1,
+      "months_with_bounces": 1,
+      "months_negative_closing": 0,
+      "red_flags": [
+        "1 bounced instrument(s) across 1 month(s)."
+      ],
+      "source": "bank_statements.json"
+    },
+    "decision": "decline",
+    "risk_band": "decline",
+    "requires_human_signoff": true,
+    "decision_reasons": [
+      {
+        "code": "DSCR_BELOW_FLOOR",
+        "meaning": "Debt-service coverage ratio is below the sector floor",
+        "is_decline_reason": true,
+        "route": "decline",
+        "detail": "DSCR 0.51 is below 1.00: cash flow does not cover debt service."
+      },
+      {
+        "code": "THIN_FILE",
+        "meaning": "Fewer than 24 months operating, or no active trade line",
+        "is_decline_reason": true,
+        "route": "decline",
+        "detail": "6 months operating (minimum 24)."
+      },
+      {
+        "code": "LEVERAGE_ABOVE_LIMIT",
+        "meaning": "Total debt after the loan exceeds 6.0 times EBITDA",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Debt after the loan is 7.59x EBITDA (maximum 6.0x)."
+      },
+      {
+        "code": "TENOR_ABOVE_LIMIT",
+        "meaning": "Requested tenor is longer than the grade or the sector allows",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Requested tenor 48 months exceeds the permitted 12 (grade/sector, 4.3.2)."
+      },
+      {
+        "code": "COLLATERAL_SHORTFALL",
+        "meaning": "Collateral is worth less than the cover the grade requires",
+        "is_decline_reason": true,
+        "route": "borderline",
+        "detail": "Collateral INR 11,630,000 is below the required INR 19,125,000 (150% for grade D2)."
+      }
+    ],
+    "routing_reasons": [
+      "Human sign-off required: Board Credit Committee."
+    ],
+    "requires_named_signatory": true,
+    "approval_authority": "Board Credit Committee",
+    "key_risks": [
+      "DSCR of 0.51 is substantially below the Textiles sector floor of 1.30",
+      "Operating history is only 6 months, violating the minimum 24-month requirement",
+      "High leverage with post-loan debt at 7.59x EBITDA exceeding the 6.0x limit",
+      "Collateral value of INR 11,630,000 falls short of the required INR 19,125,000 (150%)",
+      "Requested tenor of 48 months exceeds the permitted maximum of 12 months"
+    ],
+    "data_gaps": [],
+    "rationale": "The loan application has been declined due to critical policy breaches across multiple risk dimensions. The calculated DSCR of 0.51 fails to meet the Textiles sector floor of 1.30, and total debt after the loan reaches 7.59x EBITDA, exceeding the 6.0x ceiling. Furthermore, the applicant has only operated for 6 months against the required 24 months, presents a collateral shortfall, and requests a tenor of 48 months which significantly exceeds the permitted 12-month limit.",
+    "tools_used": [
+      "get_applicant_profile",
+      "get_credit_bureau",
+      "get_bank_statement",
+      "assign_risk_grade"
+    ]
+  }
+]

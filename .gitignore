@@ -1,0 +1,8 @@
+.env
+.venv/
+__pycache__/
+*.db
+*.log
+traces.jsonl
+bureau_cache.json
+data_output/
